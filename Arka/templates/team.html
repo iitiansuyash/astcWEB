@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+	{% block style%}
+	
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+	 .heading{
+       font-family: 'Righteous', cursive;
+	 }
+	
+	 .headingbg{
+
+        
+         background-size: cover;
+         background-repeat: no-repeat;
+         padding: 7rem 0 0 0;
+        width: 100%;
+        height: 30vh;
+        color: white;
+         background-image: url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640866758/greg-rakozy-0LU4vO5iFpM-unsplash_dc6l6l.jpg);
+     }
+	
+	</style>
+	{% endblock %}
+
+{% block 'content' %}
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                            START SECTION 2 - THE INTRO SECTION  
+/////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	
+  
+<section class="headingbg pb-5 ">
+    <h1 class="display-3 fw-bold text-center heading">TEAM MEMBERS</h1>
+  </section>
+
+  <section>
+	<div class="container">
+	 
+	<!-- START THE DESCRIPTION CONTENT  -->
+	
+      <div class="row">
+       {% for member in members %}
+        {% if not member.graduated %}
+          
+          
+          {% if member.Arka_department == 'WEB-D and Graphics' %}
+          <div class="col-md-4 col-lg-3 col-sm-6 px-2 my-5">
+            <div class="card shodaw" style="border-radius: 20px;">
+              <img src="{{member.profile_pic.url}}" class="card-img-top" height="220px" style="border-radius: 20px 20px 0 0;" alt="...">
+
+              <div class="card-body text-center">
+                <h5 class="card-title text-center">{{ member.name }}</h5>
+                <p class="card-text">{{ member.Arka_department}}</p>
+                <hr>
+                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-linkedin rounded-circle bg-black" style="font-size: 25px;"></i></a>
+                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-facebook rounded-circle" style="font-size: 25px;"></i></a>
+                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-instagram rounded-circle" style="font-size: 25px;"></i></a>
+
+              </div>
+            </div>
+          </div>
+          {% endif %}
+           
+          {% if "Content" in member.Arka_department %}
+          <div class="col-md-3 px-2 my-5">
+            <div class="card shodaw" style="border-radius: 20px;">
+              <img src="{{member.profile_pic.url}}" class="card-img-top" height="220px" style="border-radius: 20px 20px 0 0;" alt="...">
+
+              <div class="card-body text-center">
+                <h5 class="card-title text-center">{{ member.name }}</h5>
+                <p class="card-text">{{ member.Arka_department}}</p>
+                <hr>
+                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-linkedin rounded-circle bg-black" style="font-size: 25px;"></i></a>
+                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-facebook rounded-circle" style="font-size: 25px;"></i></a>
+                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-instagram rounded-circle" style="font-size: 25px;"></i></a>
+
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        {% endif %}
+        {% endfor %}
+         
+      </div>
+      
+	</div>
+  </section> 
+	
+  
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+	
+
+{% endblock 'content' %}

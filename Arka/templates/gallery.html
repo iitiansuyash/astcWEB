@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+	{% block style%}
+	
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+	 .heading{
+       font-family: 'Righteous', cursive;
+	 }
+	
+	 .headingbg{
+
+        
+         background-size: cover;
+         background-repeat: no-repeat;
+         padding: 6rem 0 0 0;
+        width: 100%;
+        height: 30vh;
+        color: white;
+         background-image: url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640866758/greg-rakozy-0LU4vO5iFpM-unsplash_dc6l6l.jpg);
+     }
+	
+	</style>
+	{% endblock %}
+
+{% block 'content' %}
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                            START SECTION 2 - THE INTRO SECTION  
+/////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	
+  
+<section class="headingbg pb-5 ">
+    <h1 class="display-3 fw-bold text-center heading">ARKA GALLERY</h1>
+</section>
+ 
+  <section id="services" class="services">
+	<div class="container text-center">
+          <div class=" d-flex justify-content-center">
+            <ul class="nav nav-tabs pb-3 col" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Images</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Videos</a>
+                </li>   
+            </ul>
+          </div>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+                        {% for img in images %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="portfolio-box shadow">
+                                    <img src="{{img.thumbnail.url}}" alt="portfolio 1 image" title="portfolio 1 picture" class="img-fluid">
+                                        <div class="portfolio-info">
+                                        <div class="caption">
+                                            <h4>project name goes here 1</h4>
+                                            <p>category project</p>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div 
+
+                {% block pagination %}
+                {% if is_paginated %}
+                    <div class="pagination text-center py-4" style="font-size: 25px;text-align: center;">
+                        <span class="page-links text-center">
+                            {% if page_obj.has_previous %}
+                                <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><i class="bi bi-arrow-left-square-fill"></i></a>
+                            {% endif %}
+                            <span class="page-current">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                            </span>
+                            {% if page_obj.has_next %}
+                                <a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><i class="bi bi-arrow-right-square-fill"></i></a>
+                            {% endif %}
+                        </span>
+                    </div>
+                {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="arka-tape">.
+            <div class="row">
+               {% for video in videos %}
+               <div class="col-md-4 col-lg-3 my-3">
+                    <div class="card shadow" style="padding: 5px; border-radius: 20px;">
+                        <!--- 
+                        <video width="100%" height="300px" controls style="border-radius: 10px 10px 0 0;">
+                            <source src="{{video.video_url}}" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <div class="card-body text-center">
+                            <p class="card-text text-center">{{video.title}} </p>
+                            <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-linkedin rounded-circle bg-black" style="font-size: 25px;"></i></a>
+                            <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-facebook rounded-circle" style="font-size: 25px;"></i></a>
+                            <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-instagram rounded-circle" style="font-size: 25px;"></i></a>
+              
+                          </div>
+                        -->
+                        <div class="video-box" 
+                        style="
+                        height: 280px;
+                        background-size: cover;
+                        border-radius: 20px 20px 0 0;
+                        background-image: url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640863934/astronaut-1784245_w0jt1b.jpg);
+                        "
+
+                        >
+                            <a href="{{video.video_url}}" class="glightbox position-absolute top-50 translate-middle">
+                              <span class="text-center text-white" >
+                                <i class="fas fa-play-circle" style="font-size: 30px;"></i>
+                              </span>
+                             
+                            </a>
+                            
+                          </div>
+                          <div class="card-body text-center">
+                            <p class="card-text text-center ">{{video.title}} </p>
+                          </div>
+                    </div>
+                </div>
+               {% endfor %}
+             </div>   
+        </div
+    </div> 
+  </section> 
+	
+  
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+	
+
+{% endblock 'content' %}

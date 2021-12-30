@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+	{% block style%}
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+	 .heading{
+       font-family: 'Righteous', cursive;
+	 }
+	
+	 .headingbg{
+
+        
+         background-size: cover;
+         background-repeat: no-repeat;
+         padding: 10rem 0 0 0;
+        width: 100%;
+        height: 30vh;
+        color: white;
+         background-image: url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640863934/astronaut-1784245_w0jt1b.jpg);
+     }
+
+     .blog-img{
+       width: 70%;
+      
+     }
+     @media screen and (max-width: 750px) {
+         .blog-img{
+           width: 100%;
+         }
+        }
+	
+	</style>
+	{% endblock %}
+
+{% block 'content' %}
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                            START SECTION 2 - THE INTRO SECTION  
+/////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	
+  
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////
+						   START SECTION 4 - THE SERVICES  
+  ///////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <section class="headingbg pb-5 ">
+    <h5 class="display-6 fw-bold text-center heading">{{blog.title}}</h5>
+  </section>
+
+  <section class="pt-5">
+	<div class="container">
+        <div class="card mb-3" style="max-width: 100%;">
+            <div class="text-center p-3">
+                <img src="{{blog.thumbnail.url}}" class="card-img-top blog-img" alt="...">
+
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{blog.title}}</h4>
+                <p class="card-text">{{blog.body}}</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>  
+    
+	</div>
+  </section> 
+	
+  
+
+	
+
+{% endblock 'content' %}
