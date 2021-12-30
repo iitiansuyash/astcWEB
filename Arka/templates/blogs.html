@@ -39,7 +39,7 @@
 
   <section class="pt-5">
 	<div class="container">
-        {% for blog in blogs  %}
+        {% for blog in allblogs  %}
           <div class="card mb-3" style="max-width: 100%;">
             <div class="row g-0">
               <div class="col-md-4">
@@ -51,7 +51,7 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <h3 class="card-title">{{ blog.title }}</h3>
-                  <p class="card-text">{{blog.body|slice:":150"}}... <a href="{% url 'blog' blog.pk %}">Read more</a></p>
+                  <p class="card-text">{{blog.body|slice:":150"}}... <a href="{% url 'blog' blog.id %}">Read more</a></p>
                   <p class="card-text">
                     {% if blog.post == 'ARKA News' %}
                     <span class="badge bg-warning text-dark me-2">{{blog.post}}</span> 
