@@ -15,7 +15,7 @@ class IndexView(ListView):
 
 class BlogsList(ListView):
     model = PostModel
-    context_object_name = 'blogs'
+    context_object_name = 'allblogs'
     paginate_by = 6
     queryset = PostModel.objects.order_by('-id')
     template_name = 'blogs.html'
