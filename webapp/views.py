@@ -34,7 +34,15 @@ class FactsList(ListView):
     paginate_by = 6
     queryset = PostModel.objects.order_by('-id').filter(post="ARKA FACTS")
     template_name = 'facts.html'
-    
+
+
+class EventsList(ListView):
+    model = PostModel
+    context_object_name = 'allevents'
+    paginate_by = 6
+    queryset = PostModel.objects.order_by('-id').filter(post="ARKA EVENTS")
+    template_name = 'event.html'
+
 class BlogDetail(DetailView):
     model = PostModel
     context_object_name = 'blog'
