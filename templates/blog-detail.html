@@ -58,6 +58,9 @@
            <div class="ms-3 my-3">
             <h3 class="display-3--title text-black">{{blog.title}}</h3>
             <p class="card-text">
+              <a href="{% url 'blogs' %}">
+                <span class="badge bg-dark text-white me-2 px-3 py-1">POSTS</span>        
+              </a>
               {% if blog.post == 'ARKA NEWS' %}
                     <span class="badge bg-warning text-dark me-2">{{blog.post}}</span> 
                     {% endif %}
@@ -65,8 +68,11 @@
                     <span class="badge bg-primary me-2">{{blog.post}}</span> 
                     {% endif %}
                     {% if blog.post == 'ARKA EVENTS' %}
-                    <span class="badge bg-danger me-2">{{blog.post}}</span> 
+                     <a href="{% url 'events' %}">
+                    <span class="badge bg-danger me-2">{{blog.post}}</span>
+                    </a> 
                     {% endif %}
+                    <br>
               <small class="text-muted">Posted on {{ blog.uploaded_at}}</small></p>
               <hr>
 
