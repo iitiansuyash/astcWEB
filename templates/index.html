@@ -24,17 +24,17 @@
 	<div class="container">
 	  <div class="row align-items-center text-white">
 		<!-- START THE CONTENT FOR THE INTRO  -->
-		<div class="col-md-6 intros text-start">
+		<div class="col-md-7 intros text-start">
 		  <h2 class="display-4">
 			<span class="display-4">Welcome To</span> <br>
 			<hr>
 			<span class="display-4--intro subtitle heading">
 			  
-			  <h1>
-				<p class="typewrite" style="font-size: 4rem;  color: #fff; " data-period="2000" data-type='[ "Astronomy Club", "Space Explorers", "Galaxy Geeks", "" ]'>
+			
+				<span class="typewrite" style="color: #fff; " data-period="2000" data-type='[ "Astronomy Club", "Space Explorers", "Galaxy Geeks", "" ]'>
 				<span class="wrap"></span>
-				</p>
-			</h1>
+				</span>
+			<br>
 			Of IIT (ISM) Dhanbad 
 			<script>
 				var TxtType = function(el, toRotate, period) {
@@ -102,7 +102,7 @@
 		 
 		</div>
 		<!-- START THE CONTENT FOR THE VIDEO -->
-		<div class="col-md-6 intros text-end">
+		<div class="col-md-5 intros text-end">
 		  <div class="video-box">
 			<a href="https://res.cloudinary.com/arka-iit-ism/video/upload/v1640787212/y2mate.com_-_TIMELINE_ARKA_The_Astronomy_Club_of_IITISM_Dhanbad_1080p.mp4_qkqqdt.mp4" 
 			class="glightbox position-absolute top-50 start-50 translate-middle">
@@ -116,9 +116,8 @@
 		</div>
 	  </div>
 	</div>
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+	<svg xmlns="http://www.w3.org/2000/svg" style="margin-top: 50px;" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
   </section>
-  
 
   <section >
 	<div class="container">
@@ -174,9 +173,20 @@
 				and events with prominent scientists and researchers. 
 				The club also has its very own state-of-the-art Dobsonian telescope to explore the marvels of the night sky.
 			</p>
-			<button type="button" class="rounded-pill btn-rounded border-primary"><a href="events.html" style="text-decoration: none; color: black;">Learn more</a>
-			  <span><i class="fas fa-arrow-right"></i></span>
-			</button>
+			<a href="{% url 'events' %}" class=" btn rounded-pill border-primary">
+				<span> Learn more <i class="fas fa-arrow-right " 
+				  style="
+					  background:#80168b; 
+					  color: white;
+					  border-radius:50%;
+					  padding-left: 10px;
+					  padding-right: 10px;
+					  padding-top: 9px;
+					  padding-bottom: 9px;
+  
+  
+					  "></i></span>
+			   </a>
 		  </div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
@@ -199,7 +209,18 @@
 				The outer space is a frontier of happenings and bizzare events. We present them to you through posters and carefully selelcted contents for you to comprehend. 
 			</p>
 			<a href="{% url 'news' %}" class=" btn rounded-pill border-primary">
-			  <span> Learn more <i class="fas fa-arrow-right px-2 py-2" style="background:#80168b; color: white;border-radius:50%"></i></span>
+			  <span> Learn more <i class="fas fa-arrow-right " 
+				style="
+					background:#80168b; 
+					color: white;
+					border-radius:50%;
+					padding-left: 10px;
+					padding-right: 10px;
+					padding-top: 9px;
+					padding-bottom: 9px;
+
+
+					"></i></span>
 	     	</a>
 		  </div>
 		</div>
@@ -214,9 +235,20 @@
 				To instill the interest for astronomy in the students of our institute, we present various topics in the form of individual presentations, group discussions as well as
 			interviews of dignified individuals who are closely related to the field and/or working on it.
 			</p>
-			<button type="button" class="rounded-pill btn-rounded border-primary">Learn more
-			  <span><i class="fas fa-arrow-right"></i></span>
-			</button>
+			<a href="{% url 'gallery' %}" class=" btn rounded-pill border-primary">
+				<span> Learn more <i class="fas fa-arrow-right " 
+				  style="
+					  background:#80168b; 
+					  color: white;
+					  border-radius:50%;
+					  padding-left: 10px;
+					  padding-right: 10px;
+					  padding-top: 9px;
+					  padding-bottom: 9px;
+  
+  
+					  "></i></span>
+			   </a>
 		  </div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
