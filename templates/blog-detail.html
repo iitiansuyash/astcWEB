@@ -28,6 +28,9 @@
            width: 100%;
          }
         }
+      .card{
+        border:0 !important;
+      }
 	
 	</style>
 	{% endblock %}
@@ -44,20 +47,37 @@
   ///////////////////////////////////////////////////////////////////////////////////////////////////-->
 
   <section class="headingbg pb-5 ">
-    <h5 class="display-6 fw-bold text-center heading">{{blog.title}}</h5>
+    <h4 class="display-5 fw-bold text-center heading">
+     {{blog.post}}
+    </h4>
   </section>
 
   <section class="pt-5">
 	<div class="container">
         <div class="card mb-3" style="max-width: 100%;">
+           <div class="ms-3 my-3">
+            <h3 class="display-3--title text-black">{{blog.title}}</h3>
+            <p class="card-text">
+              {% if blog.post == 'ARKA NEWS' %}
+                    <span class="badge bg-warning text-dark me-2">{{blog.post}}</span> 
+                    {% endif %}
+                    {% if blog.post == 'ARKA FACTS' %}
+                    <span class="badge bg-primary me-2">{{blog.post}}</span> 
+                    {% endif %}
+                    {% if blog.post == 'ARKA EVENTS' %}
+                    <span class="badge bg-danger me-2">{{blog.post}}</span> 
+                    {% endif %}
+              <small class="text-muted">Posted on {{ blog.uploaded_at}}</small></p>
+              <hr>
+
+           </div>
             <div class="text-center p-3">
                 <img src="{{blog.thumbnail.url}}" class="card-img-top blog-img" alt="...">
 
             </div>
             <div class="card-body">
-                <h4 class="card-title">{{blog.title}}</h4>
                 <p class="card-text">{{blog.body}}</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text-muted">Last updated {{ blog.uploaded_at}}</small></p>
             </div>
         </div>  
     

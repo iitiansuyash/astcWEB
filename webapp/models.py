@@ -2,9 +2,9 @@ from django.db import models
 #from django_ckeditor_5.fields import CKEditor5Field
 # Create your models here.
 POST_TYPE = (
-    ('ARKA News','ARKA NEWS'),
-    ('ARKA Facts','ARKA FACTS'),
-    ('ARKA Events','ARKA EVENTS')
+    ('ARKA NEWS','ARKA NEWS'),
+    ('ARKA FACTS','ARKA FACTS'),
+    ('ARKA EVENTS','ARKA EVENTS')
 )
 DEPARTMENT = (
     ('web-dev','Web Developer'),

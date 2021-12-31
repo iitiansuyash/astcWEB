@@ -20,6 +20,29 @@ class BlogsList(ListView):
     queryset = PostModel.objects.order_by('-id')
     template_name = 'blogs.html'
 
+
+class NewsList(ListView):
+    model = PostModel
+    context_object_name = 'allnews'
+    paginate_by = 6
+    queryset = PostModel.objects.order_by('-id').filter(post="ARKA NEWS")
+    template_name = 'news.html'
+
+class FactsList(ListView):
+    model = PostModel
+    context_object_name = 'allfacts'
+    paginate_by = 6
+    queryset = PostModel.objects.order_by('-id').filter(post="ARKA FACTS")
+    template_name = 'facts.html'
+
+
+class EventsList(ListView):
+    model = PostModel
+    context_object_name = 'allevents'
+    paginate_by = 6
+    queryset = PostModel.objects.order_by('-id').filter(post="ARKA EVENTS")
+    template_name = 'event.html'
+
 class BlogDetail(DetailView):
     model = PostModel
     context_object_name = 'blog'

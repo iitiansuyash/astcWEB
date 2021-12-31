@@ -10971,7 +10971,13 @@ textarea.form-control-lg {
 .testimonials {
   position: relative;
   padding: 0;
-  background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+    background: linear-gradient(to right, rgba(153, 38, 240, 0.7), rgba(209, 34, 227, 0.8)),url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640863934/astronaut-1784245_w0jt1b.jpg);
+
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+
 }
 .testimonials__card {
   background-color: rgba(255, 255, 255, 0.8);
