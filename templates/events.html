@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ARKA-IIT(ISM)DHANBAD</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <link rel="shortcut icon" href="images/favicon.ico">
+        
+        <!-- CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        
+        
+        <!-- FONTS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        
+        
+        <script src="https://kit.fontawesome.com/823efed4f3.js" crossorigin="anonymous"></script>
+        <script>
+    
+            //PrettyPhoto
+            jQuery(document).ready(function() {
+                $("a[rel^='prettyPhoto']").prettyPhoto();
+            });
+    
+            //BlackAndWhite
+            $(window).load(function(){
+                $('.client_img').BlackAndWhite({
+                    hoverEffect : true,
+                    webworkerPath : false,
+                    // for the images with a fluid width and height
+                    responsive:true,
+                    // to invert the hover effect
+                    invertHoverEffect: false,
+                    intensity:1,
+                    speed: { //this property could also be just speed: value for both fadeIn and fadeOut
+                        fadeIn: 300, // 200ms for fadeIn animations
+                        fadeOut: 300 // 800ms for fadeOut animations
+                    },
+                    onImageReady:function(img) {
+                        // this callback gets executed anytime an image is converted
+                    }
+                });
+            });
+    
+        </script>   
+    </head>
+    <body>
+        <img id="preloader" src="images/preloader.gif" alt="" />
+        <div class="preloader_hide">
+            <div id="events-page">
+                <!-- HEADER -->
+                <header>
+                    <!-- MENU BLOCK -->
+                    <div class="menu_block">
+                        <!-- CONTAINER -->
+                        <div class="container clearfix">
+                            <!-- LOGO -->
+                            <div class="logo pull-left">
+                                <a href="" ><img src="images/logo/Arka_logo.jfif" id="header-logo">&nbsp;<span style="font-size: 2.5rem; font-family: Arial, Helvetica, sans-serif">Events</span></a>
+                            </div><!-- //LOGO -->
+    
+                            <!-- MENU -->
+                            <div class="pull-right">
+                                <nav class="navmenu center">
+                                    <ul>
+                                        <li class="first active scroll_btn"><a href="index" >Home</a></li>
+                                        <li class="scroll_btn last"><a href="arkareels">Arka Reels</a></li>
+                                        <li class="scroll_btn last"><a href="arkanews">Arka News</a></li>
+                                        <li class="scroll_btn last"><a href="workshops">Workshops</a></li>
+                                        <li class="scroll_btn last"><a href="members">Members</a></li>
+                                    </ul>
+                                </nav>
+                            </div><!-- //MENU -->
+                        </div><!-- //MENU BLOCK -->
+                    </div><!-- //CONTAINER -->
+                </header><!-- //HEADER -->
+            </div>
+
+            <div class="container event" id="event1">
+                <div class="container">
+                    <div class="container" style="padding: 5vh;">
+                        <img src="images/events/AstroPhotography/astrophoto.jpg" class="event-img">
+                        <span>
+                            <br><br>
+                            <h1 style="text-align: center;">Astro Photography</h1>
+                            <h3 style="text-align: center;">24th September, 2021</h3>
+                            <br>
+                            <h3 style="text-align: center;"><button class="event-btn" id="event-btn1">READ MORE&nbsp;<i class="fas fa-angle-double-down"></i></button></h3>
+                        </span>
+                    </div>
+                    <div class="event-title">
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="container event ev-show" id="event1show">
+                <img src="images/events/AstroPhotography/astrophoto.jpg" class="event-img-show">
+                <h1 style="text-align: center;">Astro Photography</h1>
+                <h3 style="text-align: center;">24th September, 2021</h3>
+                <h4 style="text-align: center; padding: 50px;">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam incidunt aut cumque consequatur in excepturi possimus vitae, 
+                        voluptatum repellat, tenetur, unde nesciunt deserunt sapiente laudantium. Eum laboriosam sequi inventore tempore labore facere 
+                        commodi excepturi culpa, velit ex nam cum quam dolores similique in sunt error a asperiores eaque. Minus, quisquam?
+                    </p>
+                </h4>
+                <br><br>
+                <h3 style="text-align:center;">Check out our posts for more info:
+                    <br>
+                    <a href="https://www.instagram.com/arka_iit_ism/" target="_blank"><i class="fab fa-instagram social-icons" style="color: grey;"></i></a>
+                    <a href="https://www.facebook.com/ARKAiitism/" target="_blank"><i class="fab fa-facebook-square social-icons" style="color: grey;"></i></a>
+                </h3>
+
+                <h4 style="text-align: center; text-align: center;"><button class="event-btn" id="collapse-btn1">COLLAPSE&nbsp;<i class="fas fa-angle-double-up"></i></button></h4>
+                <br>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div id="footer" style="background-color: black;">
+			<div class="container" style="display: inline-block;">
+				<div style="display: inline-block; color: rgb(94, 83, 83);"><p class="lead">Copyright &copy; ARKA IIT(ISM)</p></div>
+				<div style="display: inline-block; text-align: right;">
+					<a href="#" style="position: absolute; bottom: 0; right: 0; padding: 5; margin-bottom: 10px; margin-right: 2rem;"><img src="">
+						<i class="bi bi-arrow-up-circle h1"></i>
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+        
+        <script src="js/event-btn.js"></script>
+    </body>
+</html>
