@@ -19,6 +19,34 @@
         color: white;
          background-image: url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640866758/greg-rakozy-0LU4vO5iFpM-unsplash_dc6l6l.jpg);
      }
+     body {
+      background-size: cover;
+         background-repeat: no-repeat;
+         padding: 7rem 0 0 0;
+        width: 100%;
+
+         background-image: url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640866758/greg-rakozy-0LU4vO5iFpM-unsplash_dc6l6l.jpg);
+    min-height: 100vh;
+}
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover, .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+}
 	
 	</style>
 	{% endblock %}
@@ -30,61 +58,77 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	
   
-<section class="headingbg pb-5 ">
-    <h1 class="display-3 fw-bold text-center heading">TEAM MEMBERS</h1>
+<section class=" pb-3 ">
+    <h1 class="display-4 text-light fw-bold  text-center heading">Club Members</h1>
+    <div class="heading-line-team mb-1"></div>
   </section>
 
   <section>
-	<div class="container">
-	 
-	<!-- START THE DESCRIPTION CONTENT  -->
-	
-      <div class="row">
-       {% for member in members %}
-        {% if not member.graduated %}
-          
-          
-          {% if member.Arka_department == 'WEB-D and Graphics' %}
-          <div class="col-md-4 col-lg-3 col-sm-6 px-2 my-5">
-            <div class="card shodaw" style="border-radius: 20px;">
-              <img src="{{member.profile_pic.url}}" class="card-img-top" height="100%" style="border-radius: 20px 20px 0 0;" alt="...">
-
-              <div class="card-body text-center">
-                <h5 class="card-title text-center">{{ member.name }}</h5>
-                <p class="card-text">{{ member.Arka_department}}</p>
-                <hr>
-                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-linkedin rounded-circle bg-black" style="font-size: 25px;"></i></a>
-                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-facebook rounded-circle" style="font-size: 25px;"></i></a>
-                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-instagram rounded-circle" style="font-size: 25px;"></i></a>
-
-              </div>
+    <div class="container">
+      <h1 class="display-6 text-center text-light">Alumni</h1>    
+      <div class="row text-center mt-5">
+        {% for member in members %}
+         {% if member.status == "Alumnus" %}
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white shadow-sm py-5 px-4" style="border-radius: 15px;">
+                 <img src="{{member.profile_pic.url}}" alt="" style="width: 160px; height: 165px;" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">{{member.name}}</h5><span class="small text-uppercase text-muted">{{member.Arka_department}}</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-instagram"></i></a></li>
+                </ul>
             </div>
-          </div>
-          {% endif %}
-           
-          {% if "Content" in member.Arka_department %}
-          <div class="col-md-3 px-2 my-5">
-            <div class="card shodaw" style="border-radius: 20px;">
-              <img src="{{member.profile_pic.url}}" class="card-img-top" height="220px" style="border-radius: 20px 20px 0 0;" alt="...">
-
-              <div class="card-body text-center">
-                <h5 class="card-title text-center">{{ member.name }}</h5>
-                <p class="card-text">{{ member.Arka_department}}</p>
-                <hr>
-                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-linkedin rounded-circle bg-black" style="font-size: 25px;"></i></a>
-                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-facebook rounded-circle" style="font-size: 25px;"></i></a>
-                <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-instagram rounded-circle" style="font-size: 25px;"></i></a>
-
-              </div>
-            </div>
-          </div>
-          {% endif %}
+        </div><!-- End -->
         {% endif %}
         {% endfor %}
-         
       </div>
-      
-	</div>
+
+      <h1 class="display-6 text-center text-light">Current Coordinators</h1>    
+      <div class="row text-center mt-5">
+        {% for member in members %}
+         {% if member.status == "Coordinator" %}
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white shadow-sm py-5 px-4" style="border-radius: 15px;">
+                 <img src="{{member.profile_pic.url}}" alt="" style="width: 160px; height: 165px;" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">{{member.name}}</h5><span class="small text-uppercase text-muted">{{member.Arka_department}}</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div><!-- End -->
+        {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 class="display-6 text-center text-light">Members</h1>    
+      <div class="row text-center mt-5">
+        {% for member in members %}
+         {% if member.status == "Member" %}
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white shadow-sm py-5 px-4" style="border-radius: 15px;">
+                 <img src="{{member.profile_pic.url}}" alt="" style="width: 160px; height: 165px;" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">{{member.name}}</h5><span class="small text-uppercase text-muted">{{member.Arka_department}}</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="bi bi-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div><!-- End -->
+        {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
   </section> 
 	
   

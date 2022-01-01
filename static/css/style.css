@@ -10830,6 +10830,25 @@ textarea.form-control-lg {
   margin-bottom: 1rem;
   background-color: #9926f0;
 }
+.heading-line-team::before {
+  content: "";
+  width: 10rem;
+  height: 0.1rem;
+  display: block;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.heading-line-team::after {
+  content: "";
+  width: 2rem;
+  padding-top: 0.5rem;
+  height: 0.2rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  background-color: white;
+}
 
 .display-3 {
   font-family: "Poppins", sans-serif;
