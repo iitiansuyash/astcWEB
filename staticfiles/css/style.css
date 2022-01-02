@@ -10866,7 +10866,7 @@ textarea.form-control-lg {
 }
 
 .menu {
-  background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+  background: linear-gradient(to right, rgba(153, 38, 240, 0.80), rgba(209, 34, 227, 0.80)),url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640863934/astronaut-1784245_w0jt1b.jpg);
 }
 .menu li {
   padding: 0 0.7rem;
@@ -10882,7 +10882,7 @@ textarea.form-control-lg {
 }
 
 .intro-section {
-  background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+  background: linear-gradient(to right, rgba(153, 38, 240, 0.80), rgba(209, 34, 227, 0.80)),url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640863934/astronaut-1784245_w0jt1b.jpg);
   padding: 10rem 0 0 0;
   width: 100%;
   height: 100%;
