@@ -1,5 +1,5 @@
 from django.db import models
-#from django_ckeditor_5.fields import CKEditor5Field
+from ckeditor.fields import RichTextField
 # Create your models here.
 POST_TYPE = (
     ('ARKA NEWS','ARKA NEWS'),
@@ -16,7 +16,7 @@ class PostModel(models.Model):
      post = models.CharField(max_length=20, choices = POST_TYPE)
      title= models.CharField(max_length=230)
      thumbnail = models.ImageField(upload_to="", null=True, blank=True)
-     body= models.TextField()
+     body= RichTextField()
      image_url = models.CharField(max_length=500, default=None, blank=True)
      uploaded_at = models.DateTimeField(auto_now_add=True, blank=True)
 

@@ -63,7 +63,8 @@
                     {% endif %}
                     <small class="text-muted">Posted on {{ blog.uploaded_at}}</small></p>
                       <p class="lh-lg">
-                        {{blog.body|slice:":150"}}
+                        {{blog.body|safe|slice:":150"}}
+                       
                       </p>
                       <a  href="{% url 'blog' blog.id %}" class=" btn rounded-pill border-primary">Read more
                         <span><i class="fas fa-arrow-right"></i></span>
