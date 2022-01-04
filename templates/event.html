@@ -32,10 +32,16 @@
   
 <section class="headingbg pb-5 ">
     <h1 class="display-3 fw-bold text-center heading">ARKA EVENTS</h1>
-  </section>
-
+  
   <section>
 	<div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'blogs' %}">Blogs</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{blog.title}}</li>
+      </ol>
+    </nav>
 	   <h3 class=" display-4 pe-5 ps-6 pt-5 pb-3 text-center">Coming Soon...</h3>
        <p class="text-center fs-5 pb-5"> <a href="{% url 'home' %}">Back</a></p>
 	 </div>

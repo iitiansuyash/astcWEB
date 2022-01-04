@@ -12,7 +12,7 @@
         
          background-size: cover;
          background-repeat: no-repeat;
-         padding: 10rem 0 0 0;
+         padding: 7rem 0 0 0;
         width: 100%;
         height: 30vh;
         color: white;
@@ -20,11 +20,19 @@
      }
 
      .blog-img{
-       width: 70%;
+       width: 1000px;
+       height:600px;
       
      }
-     @media screen and (max-width: 750px) {
+     .blog{
+       width: 1000px;
+     }
+     @media screen and (max-width: 990px) {
          .blog-img{
+           width: 100%;
+           height: 100%;
+         }
+         .blog{
            width: 100%;
          }
         }
@@ -37,23 +45,22 @@
 
 {% block 'content' %}
 
-<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
-                            START SECTION 2 - THE INTRO SECTION  
-/////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	
-  
-  <!-- //////////////////////////////////////////////////////////////////////////////////////////////
-						   START SECTION 4 - THE SERVICES  
-  ///////////////////////////////////////////////////////////////////////////////////////////////////-->
 
   <section class="headingbg pb-5 ">
-    <h4 class="display-5 fw-bold text-center heading">
-     {{blog.post}}
+    <h4 class="display-6 fw-bold text-center heading">
+     {{blog.title}}
     </h4>
+    <p class="text-center">
+      {% if blog.post == 'ARKA FACTS' %}
+      <a href="{% url 'facts' %}"><b>#{{blog.post}}</b></a>
+
+      {% endif %}
+    </p>
   </section>
 
   <section class="pt-5">
-	<div class="container">
+	<div class="container blog">
+     
         <div class="card mb-3" style="max-width: 100%;">
            <div class="ms-3 my-3">
             <h3 class="display-3--title text-black">{{blog.title}}</h3>
@@ -81,9 +88,10 @@
               <hr>
 
            </div>
-            <div class="text-center p-3">
-                <img src="{{blog.thumbnail.url}}" class="card-img-top blog-img" alt="...">
-
+            <div class="text-center">
+             <div class="card shadow-sm">
+              <img src="{{blog.thumbnail.url}}" class="card-img-top blog-img p-3" alt="...">
+             </div>
             </div>
             <div class="card-body">
                 <p class="card-text">{{blog.body|safe}}</p>

@@ -19,6 +19,8 @@ class PostModel(models.Model):
      body= RichTextField()
      image_url = models.CharField(max_length=500, default=None, blank=True)
      uploaded_at = models.DateTimeField(auto_now_add=True, blank=True)
+     fb_url =models.URLField(max_length=300, blank=True, null=True)
+     insta_url =models.URLField(max_length=300 , blank=True, null=True)
 
      def __str__(self):
         return self.title
@@ -48,4 +50,10 @@ class VideoModel(models.Model):
     title=models.CharField( max_length=200)
     video_url =models.URLField( max_length=200)
     uploaded_at = models.DateTimeField(auto_now_add=True, blank=True)
+
+class Announcements(models.Model):
+    title=models.CharField( max_length=200)
+    image = models.ImageField(upload_to="./notices")
+
+    body= RichTextField()
     

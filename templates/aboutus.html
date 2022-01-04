@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load static %}
+	{% block style%}
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+	 .heading{
+       font-family: 'Righteous', cursive;
+	 }
+	hr{
+		width: 80%;
+		border: 5px !important;
+		height: 8px;
+	}
+	</style>
+	{% endblock %}
+
+{% block 'content' %}
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                            START SECTION 2 - THE INTRO SECTION  
+/////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<section id="home" class="intro-section">
+	<div class="container">
+	  <div class="row align-items-center text-white">
+		<!-- START THE CONTENT FOR THE INTRO  -->
+		<div class="col-md-7 intros text-start">
+		  <h2 class="display-4">
+			<span class="display-4">Welcome To</span> <br>
+			<hr>
+			<span class="display-4--intro subtitle heading">
+			  
+			
+				<span class="typewrite" style="color: #fff; " data-period="2000" data-type='[ "Astronomy Club", "Space Explorers", "Galaxy Geeks", "" ]'>
+				<span class="wrap"></span>
+				</span>
+			<br>
+			Of IIT (ISM) Dhanbad 
+			<script>
+				var TxtType = function(el, toRotate, period) {
+				this.toRotate = toRotate;
+				this.el = el;
+				this.loopNum = 0;
+				this.period = parseInt(period, 10) || 2000;
+				this.txt = '';
+				this.tick();
+				this.isDeleting = false;
+				};
+				
+				TxtType.prototype.tick = function() {
+				var i = this.loopNum % this.toRotate.length;
+				var fullTxt = this.toRotate[i];
+				
+				if (this.isDeleting) {
+				this.txt = fullTxt.substring(0, this.txt.length - 1);
+				} else {
+				this.txt = fullTxt.substring(0, this.txt.length + 1);
+				}
+				
+				this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+				
+				var that = this;
+				var delta = 200 - Math.random() * 100;
+				
+				if (this.isDeleting) { delta /= 2; }
+				
+				if (!this.isDeleting && this.txt === fullTxt) {
+				delta = this.period;
+				this.isDeleting = true;
+				} else if (this.isDeleting && this.txt === '') {
+				this.isDeleting = false;
+				this.loopNum++;
+				delta = 500;
+				}
+				
+				setTimeout(function() {
+				that.tick();
+				}, delta);
+				};
+				
+				window.onload = function() {
+				var elements = document.getElementsByClassName('typewrite');
+				for (var i=0; i<elements.length; i++) {
+				  var toRotate = elements[i].getAttribute('data-type');
+				  var period = elements[i].getAttribute('data-period');
+				  if (toRotate) {
+					new TxtType(elements[i], JSON.parse(toRotate), period);
+				  }
+				}
+				// INJECT CSS
+				var css = document.createElement("style");
+				css.type = "text/css";
+				css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+				document.body.appendChild(css);
+				};
+				
+				
+				</script> 
+				
+			</span>
+		  </h2>
+		 
+		</div>
+		<!-- START THE CONTENT FOR THE VIDEO -->
+		<div class="col-md-5 intros text-end">
+		  <div class="video-box">
+			<a href="https://res.cloudinary.com/arka-iit-ism/video/upload/v1640787212/y2mate.com_-_TIMELINE_ARKA_The_Astronomy_Club_of_IITISM_Dhanbad_1080p.mp4_qkqqdt.mp4" 
+			class="glightbox position-absolute top-50 start-50 translate-middle">
+			  <span>
+				<i class="fas fa-play-circle"></i>
+			  </span>
+			  <span class="border-animation border-animation--border-1"></span>
+			  <span class="border-animation border-animation--border-2"></span>
+			</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<svg xmlns="http://www.w3.org/2000/svg" style="margin-top: 50px;" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  </section>
+
+  <section >
+	<div class="container">
+	  <div class="row text-center">
+		<h3 class="display-6 heading fw-bold">About Us</h3>
+
+		<div class="heading-line mb-1"></div>
+	  </div>
+	<!-- START THE DESCRIPTION CONTENT  -->
+	  <div class="row pt-2 pb-2 mt-0 mb-3">
+		<div class="col-md-6 border-right">
+		  <div class="bg-white p-3">
+			<h3 class="text-capitalize">
+				The Association for Research and Knowledge in Astronomy or
+				ARKA, is the official Astronomy and Physics club of IIT(ISM)
+				Dhanbad			</h3>
+		  </div>
+		</div>
+		<div class="col-md-6">
+		  <div class="bg-white p-4 text-start">
+			<h3 class="display-3--title mt-1"><i class="icon fas fa-rocket"></i> About Us.</h3>
+
+			<p class="fw-light">
+				ARKA stands for the Association for Research and Knowledge in Astronomy, and it is the official Astronomy and Physics club of IIT(ISM) Dhanbad. The club was established on 5th December 2017 under the able leadership of six esteemed seniors of the batch of 2017.
+                <br>
+				We are a team of die-hard space enthusiasts who admires the excellence of astronomy and space science and seek to spread its magnificence around us.
+			</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+  
+	 
+	
+
+{% endblock 'content' %}

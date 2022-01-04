@@ -15,3 +15,7 @@ class VideoModelAdmin(admin.ModelAdmin):
 class TeamAdmin(admin.ModelAdmin):
     list_display = ['name','admission_number','Arka_department','profile_pic']
     
+@admin.register(Announcements)
+class Noticedmin(admin.ModelAdmin):
+    list_display = ['title','body']
+    
