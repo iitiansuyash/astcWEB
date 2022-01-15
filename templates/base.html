@@ -31,6 +31,7 @@
 		  font-family: 'Righteous', cursive;
 		}
 	
+	
 	</style>
 	{% endblock %}
 <body>
@@ -43,8 +44,9 @@
 {% url 'gallery' as gallery %}
 {% url 'team' as team %}
 {% url 'events' as events %}
+{% url 'notices' as notices %}
 
-<nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark menu  fixed-top" style="background-color: linear-gradient(to right, rgba(19, 3, 32, 0.5), rgba(64, 5, 70, 0.5))">
     <div class="container">
       <a class="" href="{% url 'home' %}">
         <img src="https://res.cloudinary.com/arka-iit-ism/image/upload/v1640763982/Copy_of_arka_iit_ism_1_hnijue.svg" width="60"alt="logo image">
@@ -54,10 +56,13 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav heading">
+			<li class="nav-item"><a class="nav-link {% if request.path == notices %} active {% endif %} " href="{% url 'notices' %}">New</a></li>
+
 			<li class="nav-item "><a class="nav-link  {% if request.path == blogs %} active {% endif %}" href="{% url 'blogs' %}">Blogs</a></li>
 			<li class="nav-item "><a class="nav-link {% if request.path == gallery %} active {% endif %} " href="{% url 'gallery' %}">Gallery</a></li>
 
 			<li class="nav-item"><a class="nav-link" href="{% url 'events' %}">Events</a></li>
+
 			<li class="nav-item "><a class="nav-link  {% if request.path == team %} active {% endif %}" href="{% url 'team' %}">Members</a>
 			</li>
 		  </ul>

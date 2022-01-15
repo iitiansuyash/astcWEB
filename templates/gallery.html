@@ -1,30 +1,110 @@
 {% extends "base.html" %}
 {% load static %}
 	{% block style%}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	
-	<style>
-    @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-	 .heading{
-       font-family: 'Righteous', cursive;
-	 }
-     .btn-purple{
-         background-color: blueviolet;
-         color: white;
-     }
-	
-	 .headingbg{
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+         .heading{
+             font-family: 'Righteous', cursive;
+         }
+         .gallery-title
+{
+    font-size: 36px;
+    color: #42B32F;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+.filter-button
+{
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
 
-        
-         background-size: cover;
-         background-repeat: no-repeat;
-         padding: 6rem 0 0 0;
-        width: 100%;
-        height: 30vh;
-        color: white;
-         background-image: url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640866758/greg-rakozy-0LU4vO5iFpM-unsplash_dc6l6l.jpg);
-     }
-	
-	</style>
+}
+.filter-button:hover
+{
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #42B32F;
+
+}
+.btn-default:active .filter-button:active
+{
+    background-color: #42B32F;
+    color: white;
+}
+
+.port-image
+{
+    width: 100%;
+}
+
+.gallery_product
+{
+    margin-bottom: 30px;
+}
+
+        hr{
+          width: 80%;
+          border: 5px !important;
+          height: 8px;
+        }
+        .slider{
+          width: 500px;
+          height: 400px;
+        }
+        .pod{
+          width: 100%;
+        }
+        .gal{
+          height: 300px;
+        }
+        .card{
+          border: white !important;
+        }
+        .bg{
+          background-color:#040C1B ;
+        }
+        .bgc{
+          background-color: #111828;
+        }
+        .img1{
+          width: 50%;
+          height: auto;
+        }
+        @media screen and (max-width: 990px) {
+              .pod{
+            width: 100%;
+          }
+          .intro-text{
+            text-align: center;
+          }
+          .img1{
+            width: 100%;
+            height: auto;
+            text-align: center !important;
+          }
+              }
+      
+        </style>
 	{% endblock %}
 
 {% block 'content' %}
@@ -34,109 +114,77 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	
   
-<section class="headingbg pb-5 ">
-    <h1 class="display-3 fw-bold text-center heading">ARKA GALLERY</h1>
-</section>
- 
-  <section id="services" class="services">
-	<div class="container text-center">
-          <div class="">
-            <ul class="nav nav-tabs pb-3 col" id="myTab" role="tablist">
-                <li class="nav-item text-center" role="presentation">
-                    <a class="btn btn-sm btn-purple rounded-pill px-3 mx-2" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="bi bi-images me-1"></i> Images</a>
-               
-                    <a class="btn btn-sm btn-purple rounded-pill px-3 mx-2" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="bi bi-play-btn me-1"></i> Videos</a>
-                </li>   
-            </ul>
-          </div>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="row">
-                        {% for img in images %}
-                            <div class="col-lg-4 col-md-6">
-                                <div class="portfolio-box shadow">
-                                    <img src="{{img.thumbnail.url}}" alt="{{img.post}}" title="{{img.title}}" class="img-fluid">
-                                        <div class="portfolio-info">
-                                        <div class="caption">
-                                            
-                                            <p>{{ img.title }}</p>
-                                        </div>
-                                        </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div 
+<section id="home" class="intro-section pb-5">
+    <div class="p-sm-5 text-center">
+      <h1 class="heading display-2 text-white">ARKA Gallery</h1>
 
-                {% block pagination %}
-                {% if is_paginated %}
-                    <div class="pagination text-center py-4" style="font-size: 25px;text-align: center;">
-                        <span class="page-links text-center">
-                            {% if page_obj.has_previous %}
-                                <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><i class="bi bi-arrow-left-square-fill"></i></a>
-                            {% endif %}
-                            <span class="page-current">
-                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                            </span>
-                            {% if page_obj.has_next %}
-                                <a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><i class="bi bi-arrow-right-square-fill"></i></a>
-                            {% endif %}
-                        </span>
-                    </div>
-                {% endif %}
-                {% endblock %}
+      <div align="center">
+        <button class="btn btn-default filter-button" data-filter="all">All</button>
+        <button class="btn btn-default filter-button" data-filter="news">News</button>
+        <button class="btn btn-default filter-button" data-filter="events">Events</button>
+        <button class="btn btn-default filter-button" data-filter="facts">Facts</button>
+    </div>
+    </div>
+</section>
+
+ 
+  <section id="services" class="bg services">
+      <!---->
+      <div class="container">
+        <div class="row">
+        
+
+      
+        <br/>
+
+      
+          {% for img in images  %}
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter {{img.post}}">
+                <img src="{{img.thumbnail.url}}" class="img-responsive">
+            </div>
+
+            {% endfor %}
+
+            
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
             </div>
         </div>
-
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="arka-tape">.
-            <div class="row">
-               {% for video in videos %}
-               <div class="col-md-4 col-lg-3 my-3">
-                    <div class="card shadow" style="padding: 5px; border-radius: 20px;">
-                        <!--- 
-                        <video width="100%" height="300px" controls style="border-radius: 10px 10px 0 0;">
-                            <source src="{{video.video_url}}" type="video/mp4">
-                          Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body text-center">
-                            <p class="card-text text-center">{{video.title}} </p>
-                            <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-linkedin rounded-circle bg-black" style="font-size: 25px;"></i></a>
-                            <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-facebook rounded-circle" style="font-size: 25px;"></i></a>
-                            <a href="#"  class="rounded text-dark mx-1"><i class="bi bi-instagram rounded-circle" style="font-size: 25px;"></i></a>
-              
-                          </div>
-                        -->
-                        <div class="video-box" 
-                        style="
-                        height: 280px;
-                        background-size: cover;
-                        border-radius: 20px 20px 0 0;
-                        background-image: url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640863934/astronaut-1784245_w0jt1b.jpg);
-                        "
-
-                        >
-                            <a href="{{video.video_url}}" class="glightbox position-absolute top-50 translate-middle">
-                              <span class="text-center text-white" >
-                                <i class="fas fa-play-circle" style="font-size: 30px;"></i>
-                              </span>
-                             
-                            </a>
-                            
-                          </div>
-                          <div class="card-body text-center">
-                            <p class="card-text text-center ">{{video.title}} </p>
-                          </div>
-                    </div>
-                </div>
-               {% endfor %}
-             </div>   
-        </div
-    </div> 
+    </div>
+	
   </section> 
 	
   
-  <!-- ////////////////////////////////////////////////////////////////////////////////////////////////
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
 
+  <script>
+           $(document).ready(function(){
 
+    $(".filter-button").click(function(){
+        var value = $(this).attr('data-filter');
+        
+        if(value == "all")
+        {
+            //$('.filter').removeClass('hidden');
+            $('.filter').show('1000');
+        }
+        else
+        {
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');
+            
+        }
+    });
+    
+    if ($(".filter-button").removeClass("active")) {
+$(this).removeClass("active");
+}
+$(this).addClass("active");
+
+});
+       </script>
 
 	
 

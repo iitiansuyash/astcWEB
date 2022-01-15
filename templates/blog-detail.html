@@ -3,107 +3,92 @@
 	{% block style%}
 	<style>
     @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-	 .heading{
-       font-family: 'Righteous', cursive;
-	 }
-	
-	 .headingbg{
-
-        
-         background-size: cover;
-         background-repeat: no-repeat;
-         padding: 7rem 0 0 0;
+     .heading{
+         font-family: 'Righteous', cursive;
+     }
+    hr{
+      width: 80%;
+      border: 5px !important;
+      height: 8px;
+    }
+    .slider{
+      width: 500px;
+      height: 400px;
+    }
+   
+    .bg{
+      background-color:#040C1B ;
+    }
+    .bgc{
+      background-color: #111828;
+    }
+    
+    @media screen and (max-width: 990px) {
+          .pod{
         width: 100%;
-        height: 30vh;
-        color: white;
-         background-image: url(https://res.cloudinary.com/arka-iit-ism/image/upload/v1640863934/astronaut-1784245_w0jt1b.jpg);
-     }
-
-     .blog-img{
-       width: 1000px;
-       height:600px;
-      
-     }
-     .blog{
-       width: 1000px;
-     }
-     @media screen and (max-width: 990px) {
-         .blog-img{
-           width: 100%;
-           height: 100%;
-         }
-         .blog{
-           width: 100%;
-         }
-        }
-      .card{
-        border:0 !important;
       }
-	
-	</style>
+      .intro-text{
+        text-align: center;
+      }
+      .img1{
+        width: 100%;
+        height: auto;
+        text-align: center !important;
+      }
+          }
+  
+    </style>
 	{% endblock %}
 
-{% block 'content' %}
+  {% block 'content' %}
+
+  <!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                              START SECTION 2 - THE INTRO SECTION  
+  /////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  
+  <section id="home" class="intro-section pb-5">
+    <div class="p-sm-5 text-center">
+      <h1 class="heading display-2 text-white">ARKA BLOGS</h1>
+    </div>
+    </section>
 
 
-  <section class="headingbg pb-5 ">
-    <h4 class="display-6 fw-bold text-center heading">
-     {{blog.title}}
-    </h4>
-    <p class="text-center">
-      {% if blog.post == 'ARKA FACTS' %}
-      <a href="{% url 'facts' %}"><b>#{{blog.post}}</b></a>
-
-      {% endif %}
-    </p>
-  </section>
-
-  <section class="pt-5">
-	<div class="container blog">
-     
-        <div class="card mb-3" style="max-width: 100%;">
-           <div class="ms-3 my-3">
-            <h3 class="display-3--title text-black">{{blog.title}}</h3>
-            <p class="card-text">
-              <a href="{% url 'blogs' %}">
-                <span class="badge bg-dark text-white me-2 px-3 py-1">POSTS</span>        
-              </a>
-                 {% if blog.post == 'ARKA NEWS' %}
-                   <a href="{% url 'news' %}">
-                    <span class="badge bg-warning text-dark me-2">{{blog.post}}</span>
-                   </a> 
-                    {% endif %}
-                    {% if blog.post == 'ARKA FACTS' %}
-                   <a href="{% url 'facts' %}">
-                    <span class="badge bg-primary me-2">{{blog.post}}</span>
-                   </a> 
-                    {% endif %}
-                    {% if blog.post == 'ARKA EVENTS' %}
-                     <a href="{% url 'events' %}">
-                    <span class="badge bg-danger me-2">{{blog.post}}</span>
-                    </a> 
-                    {% endif %}
-                    <br>
-              <small class="text-muted">Posted on {{ blog.uploaded_at}}</small></p>
-              <hr>
-
+   <section class="bg text-white py-3">
+    <div class="container">
+      <!-- START THE MARKETING CONTENT  -->	
+        <div class="row my-2">
+        <h3 class="display-6 heading  fw-bold">Blogs</h3>
+          <div class="col-md-8">
+            <div class="card bgc my-2">
+             <div class="p-3">
+              <h3 class="display-3--title">{{blog.title}}</h3>
+              <p class="lh-lg">
+              {{blog.body|safe}}
+              </p>
+              </div>
            </div>
-            <div class="text-center">
-             <div class="card shadow-sm">
-              <img src="{{blog.thumbnail.url}}" class="card-img-top blog-img p-3" alt="...">
-             </div>
+         </div>
+          <div class="col-md-4">
+          <div class="card bgc">
+            <div class="card bgc">
+               <div class="card-body">
+                <img src="{{blog.thumbnail.url}}" class="blog-img" width="100%" alt="">
+
+              </div>
             </div>
-            <div class="card-body">
-                <p class="card-text">{{blog.body|safe}}</p>
-                <p class="card-text"><small class="text-muted">Last updated {{ blog.uploaded_at}}</small></p>
-            </div>
-        </div>  
+           </div>
+          </div>
+        </div>
+       
+      </div>
     
-	</div>
-  </section> 
-	
+     </section>	
+    
+  
+    
+  
+   
+  
+  {% endblock 'content' %}
   
 
-	
-
-{% endblock 'content' %}

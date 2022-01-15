@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-2!gjhv_(xfqrh^_6&tgr=9zw2w78=--u9-xrjv@h_3b=_@szt1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['arkaclub.pythonanywhere.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['arkaclub.pythonanywhere.com', '127.0.0.1', 'localhost','7d56-61-0-83-158.ngrok.io']
 
 
 # Application definition

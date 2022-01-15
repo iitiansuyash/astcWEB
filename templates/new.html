@@ -57,31 +57,26 @@
                               START SECTION 2 - THE INTRO SECTION  
   /////////////////////////////////////////////////////////////////////////////////////////////////////-->
   
-  <section id="home" class="intro-section pb-5">
-    <div class="p-sm-5 text-center">
-      <h1 class="heading display-2 text-white">ARKA BLOGS</h1>
-    </div>
-    </section>
+  <section id="home" class="pb-5">
+    
+  </section>
 
 
    <section class="bg text-white py-3">
     <div class="container">
       <!-- START THE MARKETING CONTENT  -->	
         <div class="row my-2">
-        <h3 class="display-6 heading  fw-bold">Blogs 
-          <button class="text-white btn rounded-pill border-primary filter-button" data-filter="all">All</button>
-          <button class="text-white btn rounded-pill border-primary filter-button" data-filter="news">News</button>
-          <button class="text-white btn rounded-pill border-primary filter-button" data-filter="events">Events</button>
-          <button class="text-white btn rounded-pill border-primary filter-button" data-filter="facts">Facts</button>
-
-        </h3>
+        <h3 class="display-6 heading  fw-bold">Announcements</h3>
           <div class="col-md-8">
-            {% for blog in allblogs %}
-            <div class="card bgc my-2 filter {{blog.post}}">
+            {% for blog in allnotice%}
+            <div class="card bgc my-2">
              <div class="p-3">
               <h3 class="display-3--title">{{blog.title}}</h3>
               <p class="lh-lg">
-               {{blog.body|safe|slice:":150"}}
+                To help its members gain technical expertise in astronomy, 
+                ARKA holds frequent competitions, seminars, space talks, 
+                and events with prominent scientists and researchers. 
+                The club also has its very own state-of-the-art Dobsonian telescope to explore the marvels of the night sky.
               </p>
               <a href="{% url 'blog' blog.id %}" class=" btn rounded-pill border-primary">
                 <span class="text-white"> Learn more <i class="fas fa-arrow-right " 
@@ -104,7 +99,24 @@
           <div class="col-md-4">
           <div class="card bgc">
             <div class="card bgc m-2">
+               <div class="card-body">
+                <a href="{{pod.img}}" target="_blank" class="m-1 btn rounded-pill border-primary">
+                  <span class="text-white"> News
+                 </a>
+                 <a href="{{pod.img}}" target="_blank" class="m-1 btn rounded-pill border-primary">
+                  <span class="text-white"> Facts
+                 </a>
+                 <a href="{{pod.img}}" target="_blank" class="m-1 btn rounded-pill border-primary">
+                  <span class="text-white"> Events
+                 </a>
+                 <a href="{{pod.img}}" target="_blank" class="m-1 btn rounded-pill border-primary">
+                  <span class="text-white"> NASA
+                 </a>
+                 <a href="{{pod.img}}" target="_blank" class="m-1 btn rounded-pill border-primary">
+                  <span class="text-white"> ISRO
+                 </a>
               
+              </div>
             </div>
            </div>
           </div>
@@ -115,35 +127,7 @@
      </section>	
     
   
-     <script>
-      $(document).ready(function(){
-
-$(".filter-button").click(function(){
-   var value = $(this).attr('data-filter');
-   
-   if(value == "all")
-   {
-       //$('.filter').removeClass('hidden');
-       $('.filter').show('1000');
-   }
-   else
-   {
-//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
-//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
-       $(".filter").not('.'+value).hide('3000');
-       $('.filter').filter('.'+value).show('3000');
-       
-   }
-});
-
-if ($(".filter-button").removeClass("active")) {
-$(this).removeClass("active");
-}
-$(this).addClass("active");
-
-});
-  </script>
-
+    
   
    
   

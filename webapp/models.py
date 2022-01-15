@@ -2,9 +2,9 @@ from django.db import models
 from ckeditor.fields import RichTextField
 # Create your models here.
 POST_TYPE = (
-    ('ARKA NEWS','ARKA NEWS'),
-    ('ARKA FACTS','ARKA FACTS'),
-    ('ARKA EVENTS','ARKA EVENTS')
+    ('news','ARKA NEWS'),
+    ('facts','ARKA FACTS'),
+    ('events','ARKA EVENTS')
 )
 DEPARTMENT = (
     ('web-dev','Web Developer'),
@@ -54,6 +54,8 @@ class VideoModel(models.Model):
 class Announcements(models.Model):
     title=models.CharField( max_length=200)
     image = models.ImageField(upload_to="./notices")
+    uploaded_at = models.DateTimeField(auto_now_add=True, blank=True)
+    upldated_at = models.DateTimeField(auto_now_add=True, blank=True)
 
     body= RichTextField()
     

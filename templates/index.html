@@ -15,6 +15,39 @@
 		width: 500px;
 		height: 400px;
 	}
+	.pod{
+		width: 100%;
+	}
+	.gal{
+		height: 300px;
+	}
+	.card{
+		border: white !important;
+	}
+	.bg{
+		background-color:#040C1B ;
+	}
+	.bgc{
+		background-color: #111828;
+	}
+	.img1{
+		width: 50%;
+		height: auto;
+	}
+	@media screen and (max-width: 990px) {
+        .pod{
+			width: 100%;
+		}
+		.intro-text{
+			text-align: center;
+		}
+		.img1{
+			width: 100%;
+			height: auto;
+			text-align: center !important;
+		}
+        }
+
 	</style>
 	{% endblock %}
 
@@ -24,308 +57,173 @@
                             START SECTION 2 - THE INTRO SECTION  
 /////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-<section id="home" class="intro-section">
-	<div class="container">
-	  <div class="row align-items-center text-white">
-		<!-- START THE CONTENT FOR THE INTRO  -->
-		<div class="col-md-7 intros text-start">
-		  <h2 class="display-4">
-			<span class="display-4">Welcome To</span> <br>
-			<hr>
-			<span class="display-4--intro subtitle heading">
-			  
-			
-				<span class="typewrite" style="color: #fff; " data-period="2000" data-type='[ "Astronomy Club", "Space Explorers", "Galaxy Geeks", "" ]'>
-				<span class="wrap"></span>
-				</span>
-			<br>
-			Of IIT (ISM) Dhanbad 
-			<script>
-				var TxtType = function(el, toRotate, period) {
-				this.toRotate = toRotate;
-				this.el = el;
-				this.loopNum = 0;
-				this.period = parseInt(period, 10) || 2000;
-				this.txt = '';
-				this.tick();
-				this.isDeleting = false;
-				};
-				
-				TxtType.prototype.tick = function() {
-				var i = this.loopNum % this.toRotate.length;
-				var fullTxt = this.toRotate[i];
-				
-				if (this.isDeleting) {
-				this.txt = fullTxt.substring(0, this.txt.length - 1);
-				} else {
-				this.txt = fullTxt.substring(0, this.txt.length + 1);
-				}
-				
-				this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-				
-				var that = this;
-				var delta = 200 - Math.random() * 100;
-				
-				if (this.isDeleting) { delta /= 2; }
-				
-				if (!this.isDeleting && this.txt === fullTxt) {
-				delta = this.period;
-				this.isDeleting = true;
-				} else if (this.isDeleting && this.txt === '') {
-				this.isDeleting = false;
-				this.loopNum++;
-				delta = 500;
-				}
-				
-				setTimeout(function() {
-				that.tick();
-				}, delta);
-				};
-				
-				window.onload = function() {
-				var elements = document.getElementsByClassName('typewrite');
-				for (var i=0; i<elements.length; i++) {
-				  var toRotate = elements[i].getAttribute('data-type');
-				  var period = elements[i].getAttribute('data-period');
-				  if (toRotate) {
-					new TxtType(elements[i], JSON.parse(toRotate), period);
-				  }
-				}
-				// INJECT CSS
-				var css = document.createElement("style");
-				css.type = "text/css";
-				css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-				document.body.appendChild(css);
-				};
-				
-				
-				</script> 
-				
-			</span>
-		  </h2>
-		 
-		</div>
-		<!-- START THE CONTENT FOR THE VIDEO -->
-		<div class="col-md-5 intros text-end">
-		  <div class="video-box">
-			<a href="https://res.cloudinary.com/arka-iit-ism/video/upload/v1640787212/y2mate.com_-_TIMELINE_ARKA_The_Astronomy_Club_of_IITISM_Dhanbad_1080p.mp4_qkqqdt.mp4" 
-			class="glightbox position-absolute top-50 start-50 translate-middle">
-			  <span>
-				<i class="fas fa-play-circle"></i>
-			  </span>
-			  <span class="border-animation border-animation--border-1"></span>
-			  <span class="border-animation border-animation--border-2"></span>
-			</a>
-		  </div>
-		</div>
-	  </div>
+<section id="home" class="intro-section pb-5">
+	<div class="p-sm-5 text-center">
+	  <h1 class="heading display-2 text-white">ARKA</h1>
+	  <h2 class="text-white display-5 heading">
+	<b>The 
+		Astronomy Club <br> IIT (ISM) Dhanbad</b></h2>
 	</div>
-	<svg xmlns="http://www.w3.org/2000/svg" style="margin-top: 50px;" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
   </section>
-  <section >
-	<div class="container">
-	  <div class="row text-center">
-		<h3 class="display-6 heading fw-bold">About Us</h3>
 
-		<div class="heading-line mb-1"></div>
-	  </div>
-	<!-- START THE DESCRIPTION CONTENT  -->
-	  <div class="row pt-2 pb-2 mt-0 mb-3">
-		<div class="col-md-6 border-right">
-		  <div class="bg-white p-3">
-			<h3 class="text-capitalize">
-				The Association for Research and Knowledge in Astronomy or
-				ARKA, is the official Astronomy and Physics club of IIT(ISM)
-				Dhanbad			</h3>
-		  </div>
-		</div>
-		<div class="col-md-6">
-		  <div class="bg-white p-4 text-start">
-			<h3 class="display-3--title mt-1"><i class="icon fas fa-rocket"></i> About Us.</h3>
-
-			<p class="fw-light">
-				ARKA stands for the Association for Research and Knowledge in Astronomy, and it is the official Astronomy and Physics club of IIT(ISM) Dhanbad. The club was established on 5th December 2017 under the able leadership of six esteemed seniors of the batch of 2017.
-                <br>
-				We are a team of die-hard space enthusiasts who admires the excellence of astronomy and space science and seek to spread its magnificence around us.
-			</p>
-		  </div>
-		</div>
-	  </div>
-	</div>
- </section>
-
-  <section >
-	<div class="container">
-
-
-
-	  <div class="row text-center">
-		<h3 class="display-6 heading fw-bold">Announcements</h3>
-
-		<div class="heading-line mb-1"></div>
-	  </div>
-	<!-- START THE DESCRIPTION CONTENT  -->
-	   <div class="card padding-4 shadow-sm">
-
-		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-inner">
-				{% for notice in notices %}
-				<div class="carousel-item {% if forloop.first  %} active {% endif %} ">
-					<div class="card p-2 mb-3">
-						<div class="row g-0">
-						  <div class="col-md-4">
-							<img src="{{ notice.image.url }}" class="img-fluid rounded-start slider" alt="...">
-						  </div>
-						  <div class="col-md-8">
-							<div class="card-body">
-							  <h3 class="display-3--title text-center heading mt-1">{{notice.title}}</h3>
-							  <p class="card-text">{{notice.body|safe}}</p>
-							  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-							</div>
-						  </div>
+<section>
+	<div class=" wrapper bg text-white">
+		<div class="p-sm-5">
+			<div class="row">
+				<div class="col-md-8">
+				 <div class="card bgc  p-3" style="border: white;" >
+					 <h3 class="heading intro-text">About us</h3>
+					 <div class="bgc my-3">
+						 <img class="pod" src="https://res.cloudinary.com/arka-iit-ism/image/upload/v1642253827/ARKA_Banner_1_ke89zg.svg" alt="">
+	
+					 </div>
+					 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+						 Minima molestias non ex laborum dicta est libero, accusantium
+						quidem incidunt, deleniti consectetur earum at, suscipit id repellendus. Recusandae
+						   atque eius excepturi quia modi aut harum ipsam aliquid dolorum exercitationem laboriosam nesciunt,
+							asperiores omnis deleniti nostrum cumque eos eum aperiam eveniet amet non dignissimos? Voluptas corrupti earum
+							 debitis quas eum distinctio optio laborum ex repellendus iste ipsa,
+						  perspiciatis corporis. Voluptatem iure suscipit totam odio?</p>
+						  <div class="heading-line2 mb-1"></div>
+				 </div>
+				</div>
+				<div class="col-md-4">
+	              <div class="card py-5 bgc">
+					 <div class="card bgc m-2">
+						<div class="card-body">
+							<h3 class="heading text-center">Latest News</h3>
+                    <hr>
+							{% for notice in allnotice %}
+							<h5 class="heading">{{notice.title}}</h5>
+							<p>{{notice.body|safe|slice:":200"}}</p>
+							<hr>
+										 
+							{% endfor %}
 						</div>
-					  </div>
+					 </div>
 				  </div>
-			    {% endfor %}
-			
-			  
+				</div>
 			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  <span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  <span class="visually-hidden">Next</span>
-			</button>
-		  </div>
+		</div>
+	</div>
+</section>
+  
 
-	   </div>
-	  
-	 </div>
+	
 	
   
 	<!-- START THE CONTENT FOR THE SERVICES  -->
-	<div class="container mt-5">
-	  <!-- START THE MARKETING CONTENT  -->
-	  <h3 class="display-6 heading text-center fw-bold">Activities</h3>
-	  <div class="heading-line mb-1"></div>
+ <section class="intro-section text-white py-3">
+	<div class="p-sm-5">
+	  <!-- START THE MARKETING CONTENT  -->	
+		  <div class="row my-2">
+			<h3 class="display-6 heading  fw-bold">Activities</h3>
+			  <div class="col-md-8">
+                <div class="card bgc my-2">
+					<div class="services__content">
+						<h3 class="display-3--title"> <i class="far fa-calendar-alt" style="font-size: 2.3rem;" aria-hidden="true"></i> Arka Events</h3>
+						<p class="lh-lg">
+							To help its members gain technical expertise in astronomy, 
+							ARKA holds frequent competitions, seminars, space talks, 
+							and events with prominent scientists and researchers. 
+							The club also has its very own state-of-the-art Dobsonian telescope to explore the marvels of the night sky.
+						</p>
+						<a href="{% url 'events' %}" class=" btn rounded-pill border-primary">
+							<span class="text-white"> Learn more <i class="fas fa-arrow-right " 
+							  style="
+								  background:#80168b; 
+								  color: white;
+								  border-radius:50%;
+								  padding-left: 10px;
+								  padding-right: 10px;
+								  padding-top: 9px;
+								  padding-bottom: 9px;
+			  
+			  
+								  "></i></span>
+						   </a>
+					  </div>
+				</div>
+				<div class="card bgc my-2">
+					<div class="services__content">
+						<h3 class="display-3--title mt-1"> <i class="bi bi-newspaper" style="font-size: 2.3rem;"></i> Arka News</h3>
+						<p class="lh-lg">
+							The outer space is a frontier of happenings and bizzare events. We present them to you through posters and carefully selelcted contents for you to comprehend. 
+						</p>
+						<a href="{% url 'news' %}" class=" btn rounded-pill border-primary">
+						  <span class="text-white"> Learn more <i class="fas fa-arrow-right " 
+							style="
+								background:#80168b; 
+								color: white;
+								border-radius:50%;
+								padding-left: 10px;
+								padding-right: 10px;
+								padding-top: 9px;
+								padding-bottom: 9px;
+			
+			
+								"></i></span>
+						 </a>
+					  </div>
+				  </div>
+				  <div class="card bgc">
+					<div class="services__content">
+						<!-- <div class="icon fas fa-rocket"></div> -->
+						<h3 class="display-3--title mt-1"><i class="bi bi-camera-reels" style="font-size: 2.3rem;"></i> Arka Tapes</h3>
+						<p class="lh-lg">
+							To instill the interest for astronomy in the students of our institute, we present various topics in the form of individual presentations, group discussions as well as
+						interviews of dignified individuals who are closely related to the field and/or working on it.
+						</p>
+						<a href="{% url 'gallery' %}" class=" btn rounded-pill border-primary">
+							<span class="text-white"> Learn more <i class="fas fa-arrow-right " 
+							  style="
+								  background:#80168b; 
+								  color: white;
+								  border-radius:50%;
+								  padding-left: 10px;
+								  padding-right: 10px;
+								  padding-top: 9px;
+								  padding-bottom: 9px;
+			  
+			  
+								  "></i></span>
+						   </a>
+					  </div>
+				  </div>
 
-	  <p class="lh-lg text-center">
-		<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, impedit rem,
-		 doloremque autem quibusdam blanditiis harum alias hic accusantium 
-		 maxime atque ratione magni repellat? -->
-	  </p>
-	  <div class="row">
-		  
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services">
-		  <div class="services__content">
-			<h3 class="display-3--title mt-1"> <i class="far fa-calendar-alt" style="font-size: 2.3rem;" aria-hidden="true"></i> Arka Events</h3>
-			<p class="lh-lg">
-				To help its members gain technical expertise in astronomy, 
-				ARKA holds frequent competitions, seminars, space talks, 
-				and events with prominent scientists and researchers. 
-				The club also has its very own state-of-the-art Dobsonian telescope to explore the marvels of the night sky.
-			</p>
-			<a href="{% url 'events' %}" class=" btn rounded-pill border-primary">
-				<span> Learn more <i class="fas fa-arrow-right " 
-				  style="
-					  background:#80168b; 
-					  color: white;
-					  border-radius:50%;
-					  padding-left: 10px;
-					  padding-right: 10px;
-					  padding-top: 9px;
-					  padding-bottom: 9px;
-  
-  
-					  "></i></span>
-			   </a>
-		  </div>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
-		  <div class="services__pic">
-			<img src="https://res.cloudinary.com/arka-iit-ism/image/upload/v1640764719/undraw_maker_launch_re_rq81_tso7ow.svg" alt="marketing illustration" class="img-fluid">
-		  </div>
-		</div>
-	  </div>
-	  <!-- START THE WEB DEVELOPMENT CONTENT  -->
-	  <div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start">
-		  <div class="services__pic">
-			<img src="https://res.cloudinary.com/arka-iit-ism/image/upload/v1640764945/arkaNews_kljpfy.svg" width="90%" alt="web development illustration" class="img-fluid">
-		  </div>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
-		  <div class="services__content">
-			<h3 class="display-3--title mt-1"> <i class="bi bi-newspaper" style="font-size: 2.3rem;"></i> Arka News</h3>
-			<p class="lh-lg">
-				The outer space is a frontier of happenings and bizzare events. We present them to you through posters and carefully selelcted contents for you to comprehend. 
-			</p>
-			<a href="{% url 'news' %}" class=" btn rounded-pill border-primary">
-			  <span> Learn more <i class="fas fa-arrow-right " 
-				style="
-					background:#80168b; 
-					color: white;
-					border-radius:50%;
-					padding-left: 10px;
-					padding-right: 10px;
-					padding-top: 9px;
-					padding-bottom: 9px;
 
+				
+			  </div>
+			  <div class="col-md-4">
+				<div class="card bgc">
+					<div class="card bgc m-2">
+					   <div class="card-body">
+						<h3 class="heading text-center">Astronomy <br> Picture of the Day</h3>
+						<hr>
+						 <img src="{{pod.img}}" width="100%" alt="">
+						 <p class="text-center mt-3">
+							<a href="{{pod.img}}" target="_blank" class=" btn rounded-pill border-primary">
+								<span class="text-white"> Full Image
+							   </a>
+						 </p>
+						 <h4 class="my-3">{{pod.title}}</h4>
+						 <p >{{pod.body}}</p>
+						 
+					  </div>
+					</div>
+				 </div>
+			  </div>
+		  </div>
+		 
+	  </div>
+	
+   </section>	
+  
 
-					"></i></span>
-	     	</a>
-		  </div>
-		</div>
-	  </div>
-	  <!-- START THE CLOUD HOSTING CONTENT  -->
-	  <div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
-		  <div class="services__content">
-			<!-- <div class="icon fas fa-rocket"></div> -->
-			<h3 class="display-3--title mt-1"><i class="bi bi-camera-reels" style="font-size: 2.3rem;"></i> Arka Tapes</h3>
-			<p class="lh-lg">
-				To instill the interest for astronomy in the students of our institute, we present various topics in the form of individual presentations, group discussions as well as
-			interviews of dignified individuals who are closely related to the field and/or working on it.
-			</p>
-			<a href="{% url 'gallery' %}" class=" btn rounded-pill border-primary">
-				<span> Learn more <i class="fas fa-arrow-right " 
-				  style="
-					  background:#80168b; 
-					  color: white;
-					  border-radius:50%;
-					  padding-left: 10px;
-					  padding-right: 10px;
-					  padding-top: 9px;
-					  padding-bottom: 9px;
   
-  
-					  "></i></span>
-			   </a>
-		  </div>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
-		  <div class="services__pic">
-			<img src="https://res.cloudinary.com/arka-iit-ism/image/upload/v1640843460/undraw_geniuses_9h9g_ab65x8.svg" alt="cloud hosting illustration" class="img-fluid">
-		  </div>
-		</div>
-	  </div>
-	</div>
-  </section>
-  
-  <!-- ////////////////////////////////////////////////////////////////////////////////////////////////
-								 START SECTION 5 - THE TESTIMONIALS  
-  /////////////////////////////////////////////////////////////////////////////////////////////////////-->
-  
-  
-  
-  <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////
-								START SECTION 7 - THE Gallery
-  //////////////////////////////////////////////////////////////////////////////////////////////////////-->
-  
-  <section id="portfolio" class="portfolio">
-	<div class="container">
+  <section id="portfolio" class="p-sm-5 bg portfolio text-white">
+	  
+	<div class="">
 	  <div class="row text-center mt-5">
 		<h1 class="display-6 heading text-capitalize">ARKA Gallery</h1>
 		<div class="heading-line"></div>
@@ -334,19 +232,16 @@
 		</p>
 	  </div>
 	
-  
 	  <!-- START THE PORTFOLIO ITEMS  -->
 	  <div class="row">
         {% for img in images %}
-		<div class="col-lg-4 col-md-6">
-		  <div class="portfolio-box shadow">
-			<img src="{{img.thumbnail.url}}" alt="{{ img.title }}" title="{{ img.title }}" class="img-fluid" width="100%">
-			<div class="portfolio-info">
-			  <div class="caption heading">
-				<h4>{{ img.title|slice:":20"}} {% if img.title|length > 20 %}...{% endif %}</h4>
-				<p><a href="{% url 'blog' img.pk %}" class="text-white">Lear more</a></p>
-			  </div>
-			</div>
+		<div class="col-lg-3 col-md-6">
+		  <div class="card gal m-2" 
+		  style="
+		  background-image: url({{img.thumbnail.url}}) ; 
+		  background-size:100%;
+		  background-repeat:no-repeat;
+		   ">
 		  </div>
 		</div>
         {% endfor %}
@@ -355,6 +250,7 @@
 	
 	</div>
   </section>
+
 
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
   <script>

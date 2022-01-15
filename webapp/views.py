@@ -5,18 +5,35 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from .models import *
 
+from .pod import pod
 # Create your views here.
+
+def gallery(request):
+    context["data"]=PostModel.objects.all().order_by
+    return render(request,'_gallery.html',context)
+
+
+
 class IndexView(ListView):
     model = PostModel
     context_object_name = 'images'
     queryset = PostModel.objects.all().order_by('-id')[:6]
-
+    pod = pod()
+    img_url = pod["hdurl"]
+    img_title = pod["title"]
+    img_caption = pod["explanation"]
+    pic_of_day = {
+        "img":img_url,
+        "title":img_title,
+        "body":img_caption,
+    }
     def get_queryset(self):
         return PostModel.objects.order_by('-id')[:6]
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context['notices'] = Announcements.objects.order_by('-id')[:5]
+        context['allnotice'] = Announcements.objects.order_by('-id')[:5]
+        context["pod"]=self.pic_of_day
         return context
     
 
@@ -53,10 +70,15 @@ class NewsList(ListView):
 class FactsList(ListView):
     model = PostModel
     context_object_name = 'allfacts'
-    paginate_by = 6
     queryset = PostModel.objects.order_by('-id').filter(post="ARKA FACTS")
     template_name = 'facts.html'
 
+class Notices(ListView):
+    model = Announcements
+    paginate_by = 6
+    context_object_name = 'allnotice'
+    queryset = Announcements.objects.order_by('-id')
+    template_name = 'new.html'
 
 class EventsList(ListView):
     model = PostModel

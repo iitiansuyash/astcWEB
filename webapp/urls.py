@@ -10,6 +10,7 @@ urlpatterns = [
    path('news',NewsList.as_view(),name='news'),
    path('facts',FactsList.as_view(),name='facts'),
    path('event',EventsList.as_view(),name='events'),
+   path('notice-board',Notices.as_view(),name='notices'),
 
    path('gallery/',GalleryList.as_view(), name = 'gallery'),
    path('admin-dashboard/',dashboard)
