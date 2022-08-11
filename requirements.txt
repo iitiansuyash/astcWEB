@@ -3,7 +3,7 @@ backports.zoneinfo==0.2.1
 certifi==2021.10.8
 charset-normalizer==2.0.9
 cloudinary==1.28.0
-Django==3.2.14
+Django==3.2.15
 django-ckeditor==6.2.0
 django-ckeditor-5==0.0.14
 django-cloudinary-storage==0.3.0
